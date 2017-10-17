@@ -27,10 +27,12 @@ function has_23(x){
 
 function fix_23(x){
     if((x[0]==2)&&(x[1]== 3)){
-        return 0;
+        return x[0];
     }
     if((x[1]==2)&& (x[2]== 3)){
-        return 0;
+        return [0];
+    }else{
+        return x
     }
 }
 // 4. countYZ
