@@ -45,7 +45,11 @@ function fix_23(x){
 // countYZ("day fez") → 2
 // countYZ("day fyyyz") → 2
 
+function countYZ(word,word2){
+    if([word.lengtgh-1]==y || [word.length-1==z ]){
 
+    }
+}
 function tester() {
 
     document.getElementById("output").innerHTML = fix_23([2,3,3]);
