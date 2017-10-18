@@ -26,14 +26,15 @@ function has_23(x){
 // fix23([1, 2, 1]) → [1, 2, 1]
 
 function fix_23(x){
-    if((x[0]==2)&&(x[1]== 3)){
-        return x[0];
+    if((x[0] == 2)&&(x[1] == 3)){
+         x[1]= 0 ;
     }
-    if((x[1]==2)&& (x[2]== 3)){
-        return [0];
-    }else{
-        return x
+
+    if((x[1] == 2) && (x[2] == 3)){
+         x[2]=0;
     }
+        return x;
+
 }
 // 4. countYZ
 // Given a string, count the number of words ending in 'y' or 'z' -- so the 'y' in "heavy" and the 'z' in
@@ -43,6 +44,7 @@ function fix_23(x){
 // countYZ("fez day") → 2
 // countYZ("day fez") → 2
 // countYZ("day fyyyz") → 2
+
 
 function tester() {
 
