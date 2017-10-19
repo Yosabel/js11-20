@@ -45,14 +45,22 @@ function fix_23(x){
 // countYZ("day fez") → 2
 // countYZ("day fyyyz") → 2
 
-function countYZ(word,word2){
-    if([word.lengtgh-1]==y || [word.length-1==z ]){
-
+function countYZ(str){
+    var x= 0;
+    var y= y + "";
+    var z = z + " ";
+   for(var i=0;i< str.length;i++){
+       if((str[y]) || (str[z])) {
+       }
     }
+    return x+=1;
 }
+
+
+
 function tester() {
 
-    document.getElementById("output").innerHTML = fix_23([2,3,3]);
+    document.getElementById("output").innerHTML = countYZ("day fez");
     // document.getElementById("output2").innerHTML = has_23([2,5]);
     //test third method, etc
 }
