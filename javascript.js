@@ -36,31 +36,55 @@ function fix_23(x){
         return x;
 
 }
-// 4. countYZ
-// Given a string, count the number of words ending in 'y' or 'z' -- so the 'y' in "heavy" and the 'z' in
-// "fez" count, but not the 'y' in "yellow" (not case sensitive). We'll say that a y or z is at the end of a word if ' +
-// 'there is a space (“ “) immediately following it.
-//
-// countYZ("fez day") → 2
-// countYZ("day fez") → 2
-// countYZ("day fyyyz") → 2
 
 function countYZ(str){
     var x= 0;
-    var y= y + "";
-    var z = z + " ";
-   for(var i=0;i< str.length;i++){
-       if((str[y]) || (str[z])) {
+    var Z= str.toUpperCase();
+    var Y= str.toUpperCase();
+    for(var i=0;i<= str.length;i++){
+       if(str[i]==" ") {
+           if((str[i-1]=="y")||(str[i-1]=="z" )) {
+               x += 1;
+           }
        }
     }
-    return x+=1;
+
+    if((str[str.length-1]=="y") ||(str[str.length-1]=="z")) {
+        x+=1
+    }
+
+    return x;
 }
 
+
+// 5. endOther
+// Given two strings, return true if either of the strings appears at the very end of the
+// other string, ignoring upper/lower case differences (in other words, the computation should not be
+// "case sensitive"). Note: str.toLowerCase() returns the lowercase version of a string.
+//
+// endOther("Hiabc", "abc") → true
+// endOther("AbC", "HiaBc") → true
+// endOther("abc", "abXabc") → true
+//
+//
+//
+
+function endOther(str,str1){
+var str=str.toLowerCase();
+var str1=str1.toLowerCase();
+   if(str1.endsWith(str)) {
+     return true;
+ }
+    if(str.endsWith(str1)){
+        return true;
+}
+return false;
+}
 
 
 function tester() {
 
-    document.getElementById("output").innerHTML = countYZ("day fez");
+    document.getElementById("output").innerHTML = endOther("hiabc","abc");
     // document.getElementById("output2").innerHTML = has_23([2,5]);
     //test third method, etc
 }
