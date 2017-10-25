@@ -57,18 +57,6 @@ function countYZ(str){
 }
 
 
-// 5. endOther
-// Given two strings, return true if either of the strings appears at the very end of the
-// other string, ignoring upper/lower case differences (in other words, the computation should not be
-// "case sensitive"). Note: str.toLowerCase() returns the lowercase version of a string.
-//
-// endOther("Hiabc", "abc") → true
-// endOther("AbC", "HiaBc") → true
-// endOther("abc", "abXabc") → true
-//
-//
-//
-
 function endOther(str,str1){
 var str=str.toLowerCase();
 var str1=str1.toLowerCase();
@@ -82,9 +70,88 @@ return false;
 }
 
 
+
+
+function starOut(str) {
+    var newStr="";
+
+    for(var i=0;i<str.length;i++){
+
+        if((str[i-1] != "*") && ([str[i]] != "*") && (str[ i + 1] != "*")) {
+            newStr += str[i];
+        }
+
+
+    }
+    return newStr;
+}
+
+
+
+
+
+function getSandwich(str){
+    var firstBread = str.indexOf("bread");
+    var lastBread = str.lastIndexOf("bread");
+    if((firstBread==-1) ||(firstBread==lastBread)){
+        return "";
+    }
+
+    return str.substring(firstBread + 5, lastBread )
+
+}
+
+function canBalance(numbers){
+    sum=0;
+    sum1=0;
+    for(var i =0;i<numbers.length;i++){
+        sum += numbers[i];
+        for(var x= i+1; x< numbers.length; x++){
+           sum1 += numbers[x];
+        }
+        if(sum==sum1){
+            return true;
+        }
+        sum1=0;
+    }
+    return false;
+}
+
+
+function countClumps(num) {
+    var number = 0;
+    for (var i = 0; i < num.length; i++) {
+        if (num[i] == num[i - 1] && num [i] !== num[i + 1]) {
+            number += 1;
+        }
+    }
+    return number;
+}
+
+// 10. evenlySpaced
+// Given three ints, a b c, one of them is small, one is medium and one is large.
+//     Return true if the three values are evenly spaced, so the difference between small and medium is the same as the
+// difference between medium and large.
+//
+// evenlySpaced(2, 4, 6) → true
+// evenlySpaced(4, 6, 2) → true
+// evenlySpaced(4, 6, 3) → false
+
+    function evenlySpaced(a, b, c) {
+        var arr = [a, b, c];
+        console.log(arr);
+        var orderedArray = arr.sort(function(a, b){return a-b});
+        console.log(orderedArray);
+        if ((orderedArray[0] + orderedArray[2]) / 2 == orderedArray[1]) {
+            return true;
+        }
+        return false;
+    }
+
+
 function tester() {
 
-    document.getElementById("output").innerHTML = endOther("hiabc","abc");
+    document.getElementById("output").innerHTML = evenlySpaced(9,10,11);
     // document.getElementById("output2").innerHTML = has_23([2,5]);
     //test third method, etc
 }
